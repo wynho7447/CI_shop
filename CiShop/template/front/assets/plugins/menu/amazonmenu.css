@@ -1,0 +1,114 @@
+.amazonmenu ul{
+	font: normal 14px Roboto;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+
+}
+
+.amazonmenu ul li{
+	position: static; /* menu li items should have position set to static */
+	transition: all .4s ease-in-out;
+}
+
+.amazonmenu > ul{
+	background: white;
+	width: 100%;
+	height: 408px; 
+	overflow:auto;
+	margin-top:10px;
+	border:1px solid #E2E2E2;
+	transition: all .4s ease-in-out;
+}
+
+.amazonmenu > ul li a{
+	color: black;
+	display: block;
+	overflow: auto;
+	padding: 10px 0;
+	position: relative;
+	text-decoration: none;
+	text-indent: 10px;
+	border-top: 1px solid #E2E2E2;
+	transition: all .4s ease-in-out;
+}
+
+.amazonmenu > ul li.hassub > a::after{ /* Arrow to indicate this item has sub menu (LI elements with sub menus have a ".hassub" class). */
+	border: 5px solid transparent;
+	border-left-color: gray; /* Default color of arrow */
+	content: '';
+	height: 0;
+	position: absolute;
+	right: 5px;
+	top: 35%;
+	width: 0;
+	transition: all .4s ease-in-out;
+}
+
+.amazonmenu > ul li.hassub.selected > a::after{ /* Style of arrow when corresponding sub menu is open (LI element has a "selected" class during this state */
+	border-left-color: red;
+}
+
+.amazonmenu ul li a:hover, .amazonmenu ul li.hassub.selected > a{ /* style of hover and selected menu item links */
+
+	transition: all .6s ease-in-out;
+	padding-left:5px;
+	box-shadow: 0px 1px 6px #DADADA;
+}
+
+.amazonmenu ul li > div, .amazonmenu ul li > ul{ /* Sub menus (Could be a DIV or UL wrapper) style */
+	background: white;
+	border: 1px solid #EFEFEF;
+	box-shadow: 1px 1px 3px #ccc;
+	display: none;
+	font-weight: normal;
+	width: 277.77%;
+	height: 404px; /* height of sub menu */
+	left: 100%;
+	overflow:auto;
+	padding: 10px;
+	position: absolute;
+	top: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 1000;
+}
+
+
+/* ###### CSS Media queries ###### */
+
+@media screen and (max-width: 480px){ /* When screen size is 480px */
+	.amazonmenu ul li > div, .amazonmenu ul li > ul{
+		left: 30px; /* Stack the sub menus so they take up less space */
+		width: 100%;
+		text-align:center;
+	}
+
+	.amazonmenu > ul li.hassub.selected::after{ /* Add "veil" to parent menus */
+		background: #eee;
+		content: '';
+		height: 100%;
+		left: 0;
+		opacity: .8;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}
+.menu_box{
+border: 1px solid #AB00FF;
+padding: 10px 4px;
+text-align:center;
+border-radius:3px;	
+}
+.img_menu_box{
+width:100%;
+height:80px;	
+}
